@@ -5,4 +5,3 @@ src/bridge/abstraction/UrgentAlert.java
 src/bridge/implementor/Channel.java
 src/bridge/implementor/EmailChannel.java
 src/bridge/implementor/SmsChannel.java
-src/bridge/implementor/PushChannel.java
