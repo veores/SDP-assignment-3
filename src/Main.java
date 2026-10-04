@@ -3,6 +3,7 @@ import bridge.abstraction.Reminder;
 import bridge.abstraction.UrgentAlert;
 import bridge.implementor.Channel;
 import bridge.implementor.EmailChannel;
+import bridge.implementor.PushChannel;
 import bridge.implementor.SmsChannel;
 
 public class Main {
@@ -19,6 +20,11 @@ public class Main {
     private static final String ALERT_SMS =
             "SMS[id=U-1; priority=URGENT] to=Beka: URGENT: Server is down";
 
+    private static final String REMINDER_PUSH =
+            "PUSH{device=Beka; id=R-1; priority=NORMAL} alert=\"Reminder: Lecture at 10:00\"";
+    private static final String ALERT_PUSH =
+            "PUSH{device=Beka; id=U-1; priority=URGENT} alert=\"URGENT: Server is down\"";
+
     private static int passed;
     private static int total;
 
@@ -33,12 +39,15 @@ public class Main {
     private static void runDemo() {
         Channel email = new EmailChannel();
         Channel sms = new SmsChannel();
+        Channel push = new PushChannel();
 
         checkCombination("T1", new Reminder("R-1", RECIPIENT, REMINDER_TEXT, email), email, REMINDER_EMAIL);
         checkCombination("T2", new Reminder("R-1", RECIPIENT, REMINDER_TEXT, sms), sms, REMINDER_SMS);
         checkCombination("T3", new UrgentAlert("U-1", RECIPIENT, ALERT_TEXT, email), email, ALERT_EMAIL);
         checkCombination("T4", new UrgentAlert("U-1", RECIPIENT, ALERT_TEXT, sms), sms, ALERT_SMS);
         checkRuntimeSwitch("T5", email, sms);
+        checkCombination("T6", new Reminder("R-1", RECIPIENT, REMINDER_TEXT, push), push, REMINDER_PUSH);
+        checkCombination("T7", new UrgentAlert("U-1", RECIPIENT, ALERT_TEXT, push), push, ALERT_PUSH);
 
         System.out.println("SUMMARY: " + passed + "/" + total + " PASS");
     }
