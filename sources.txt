@@ -1,0 +1,7 @@
+src/Main.java
+src/bridge/abstraction/Notification.java
+src/bridge/abstraction/Reminder.java
+src/bridge/abstraction/UrgentAlert.java
+src/bridge/implementor/Channel.java
+src/bridge/implementor/EmailChannel.java
+src/bridge/implementor/SmsChannel.java
