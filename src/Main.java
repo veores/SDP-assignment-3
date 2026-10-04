@@ -8,20 +8,20 @@ import bridge.implementor.SmsChannel;
 
 public class Main {
     private static final String RECIPIENT = "Beka";
-    private static final String REMINDER_TEXT = "Lecture at 10:00";
+    private static final String REMINDER_TEXT = "Team meeting at 10:00";
     private static final String ALERT_TEXT = "Server is down";
 
     private static final String REMINDER_EMAIL =
-            "EMAIL<to=Beka; id=R-1; priority=NORMAL> body=\"Reminder: Lecture at 10:00\" </EMAIL>";
+            "EMAIL<to=Beka; id=R-1; priority=NORMAL> body=\"Reminder: Team meeting at 10:00\" </EMAIL>";
     private static final String REMINDER_SMS =
-            "SMS[id=R-1; priority=NORMAL] to=Beka: Reminder: Lecture at 10:00";
+            "SMS[id=R-1; priority=NORMAL] to=Beka: Reminder: Team meeting at 10:00";
     private static final String ALERT_EMAIL =
             "EMAIL<to=Beka; id=U-1; priority=URGENT> body=\"URGENT: Server is down\" </EMAIL>";
     private static final String ALERT_SMS =
             "SMS[id=U-1; priority=URGENT] to=Beka: URGENT: Server is down";
 
     private static final String REMINDER_PUSH =
-            "PUSH{device=Beka; id=R-1; priority=NORMAL} alert=\"Reminder: Lecture at 10:00\"";
+            "PUSH{device=Beka; id=R-1; priority=NORMAL} alert=\"Reminder: Team meeting at 10:00\"";
     private static final String ALERT_PUSH =
             "PUSH{device=Beka; id=U-1; priority=URGENT} alert=\"URGENT: Server is down\"";
 
