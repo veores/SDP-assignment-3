@@ -1,8 +1,8 @@
 diff --git a/src/Main.java b/src/Main.java
-index 6e2142a..07af466 100644
+index 3e8d52f..07af466 100644
 --- a/src/Main.java
 +++ b/src/Main.java
-@@ -3,21 +3,27 @@ import bridge.abstraction.Reminder;
+@@ -3,6 +3,7 @@ import bridge.abstraction.Reminder;
  import bridge.abstraction.UrgentAlert;
  import bridge.implementor.Channel;
  import bridge.implementor.EmailChannel;
@@ -10,31 +10,18 @@ index 6e2142a..07af466 100644
  import bridge.implementor.SmsChannel;
  
  public class Main {
--    private static final String RECIPIENT = "Aida";
-+    private static final String RECIPIENT = "Beka";
-     private static final String REMINDER_TEXT = "Team meeting at 10:00";
-     private static final String ALERT_TEXT = "Server is down";
- 
-     private static final String REMINDER_EMAIL =
--            "EMAIL<to=Aida; id=R-1; priority=NORMAL> body=\"Reminder: Team meeting at 10:00\" </EMAIL>";
-+            "EMAIL<to=Beka; id=R-1; priority=NORMAL> body=\"Reminder: Team meeting at 10:00\" </EMAIL>";
-     private static final String REMINDER_SMS =
--            "SMS[id=R-1; priority=NORMAL] to=Aida: Reminder: Team meeting at 10:00";
-+            "SMS[id=R-1; priority=NORMAL] to=Beka: Reminder: Team meeting at 10:00";
-     private static final String ALERT_EMAIL =
--            "EMAIL<to=Aida; id=U-1; priority=URGENT> body=\"URGENT: Server is down\" </EMAIL>";
-+            "EMAIL<to=Beka; id=U-1; priority=URGENT> body=\"URGENT: Server is down\" </EMAIL>";
+@@ -19,6 +20,11 @@ public class Main {
      private static final String ALERT_SMS =
--            "SMS[id=U-1; priority=URGENT] to=Aida: URGENT: Server is down";
-+            "SMS[id=U-1; priority=URGENT] to=Beka: URGENT: Server is down";
-+
+             "SMS[id=U-1; priority=URGENT] to=Beka: URGENT: Server is down";
+ 
 +    private static final String REMINDER_PUSH =
 +            "PUSH{device=Beka; id=R-1; priority=NORMAL} alert=\"Reminder: Team meeting at 10:00\"";
 +    private static final String ALERT_PUSH =
 +            "PUSH{device=Beka; id=U-1; priority=URGENT} alert=\"URGENT: Server is down\"";
- 
++
      private static int passed;
      private static int total;
+ 
 @@ -33,12 +39,15 @@ public class Main {
      private static void runDemo() {
          Channel email = new EmailChannel();

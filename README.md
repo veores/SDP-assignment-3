@@ -3,8 +3,8 @@
 - **Name:** Bekarys Zharylgassyn
 - **Group:** SE-2526
 - **Topic:** B – Notifications (A1 Reminder, A2 UrgentAlert; I1 EmailChannel, I2 SmsChannel, I3 PushChannel)
-- **Repository:** https://github.com/veores/SDP.assignment.3
-- **Base commit (working I1/I2 version):** `af2ba94e47e6db48d6b525c4e5ee8a947afc1873`
+- **Repository:** https://github.com/veores/SDP-assignment-3
+- **Base commit (working I1/I2 version):** `f88c6548bc37cd78f46226d7384fc5e721f1a2da`
 
 ## Role map
 
