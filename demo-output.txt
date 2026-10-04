@@ -1,0 +1,8 @@
+﻿T1 PASS | Reminder + EmailChannel | result=EMAIL<to=Beka; id=R-1; priority=NORMAL> body="Reminder: Lecture at 10:00" </EMAIL>
+T2 PASS | Reminder + SmsChannel | result=SMS[id=R-1; priority=NORMAL] to=Beka: Reminder: Lecture at 10:00
+T3 PASS | UrgentAlert + EmailChannel | result=EMAIL<to=Beka; id=U-1; priority=URGENT> body="URGENT: Server is down" </EMAIL>
+T4 PASS | UrgentAlert + SmsChannel | result=SMS[id=U-1; priority=URGENT] to=Beka: URGENT: Server is down
+T5 PASS | sameObject=true | stateUnchanged=true before=EMAIL<to=Beka; id=R-1; priority=NORMAL> body="Reminder: Lecture at 10:00" </EMAIL> | after=SMS[id=R-1; priority=NORMAL] to=Beka: Reminder: Lecture at 10:00
+T6 PASS | Reminder + PushChannel | result=PUSH{device=Beka; id=R-1; priority=NORMAL} alert="Reminder: Lecture at 10:00"
+T7 PASS | UrgentAlert + PushChannel | result=PUSH{device=Beka; id=U-1; priority=URGENT} alert="URGENT: Server is down"
+SUMMARY: 7/7 PASS
